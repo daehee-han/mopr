@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="25dp">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="58dp"
+        android:layout_marginBottom="51dp"
         android:layout_marginEnd="52dp"
         android:layout_marginLeft="52dp"
         android:layout_marginRight="52dp"
@@ -19,40 +20,69 @@
         android:text="Myter Base"
         android:textAlignment="center"
         android:textSize="45dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/btnCreateButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="250dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="47dp"
+        android:layout_marginBottom="28dp"
+        android:layout_marginEnd="67dp"
+        android:layout_marginLeft="67dp"
+        android:layout_marginRight="67dp"
+        android:layout_marginStart="67dp"
         android:text="데이터베이스 열람"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/btnCreateButton" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="250dp"
+        android:id="@+id/btnmanagement"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="55dp"
+        android:layout_marginBottom="37dp"
+        android:layout_marginEnd="67dp"
+        android:layout_marginLeft="67dp"
+        android:layout_marginRight="67dp"
+        android:layout_marginStart="67dp"
         android:text="데이터베이스 관리"
         app:layout_constraintBottom_toTopOf="@+id/button3"
-        app:layout_constraintStart_toStartOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="250dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="179dp"
+        android:layout_marginBottom="148dp"
+        android:layout_marginEnd="67dp"
+        android:layout_marginLeft="67dp"
+        android:layout_marginRight="67dp"
+        android:layout_marginStart="67dp"
         android:text="데이터 그룹 추가/삭제"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <Button
+        android:id="@+id/btnCreateButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="27dp"
+        android:layout_marginEnd="67dp"
+        android:layout_marginLeft="67dp"
+        android:layout_marginRight="67dp"
+        android:layout_marginStart="67dp"
+        android:text="데이베이스 만들기"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 </android.support.constraint.ConstraintLayout>
