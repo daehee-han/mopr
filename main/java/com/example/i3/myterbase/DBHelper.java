@@ -1,9 +1,13 @@
 package com.example.i3.myterbase;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DBHelper extends SQLiteOpenHelper {
 
@@ -60,6 +64,33 @@ public class DBHelper extends SQLiteOpenHelper {
         Toast.makeText(context, "Insert 완료", Toast.LENGTH_SHORT).show();
 
 
+
+
+    }
+
+    public List getAllPersonData() {
+
+        StringBuffer sb = new StringBuffer();
+        sb.append(" SELECT _ID, NAME, AGE, PHONE FROM TEST_TABLE ");
+
+        SQLiteDatabase db = getReadableDatabase();
+
+        Cursor cursor = db.rawQuery(sb.toString(), null);
+
+        List people = new ArrayList();
+
+        Person person = null;
+
+        while( cursor.moveToNext() ) {
+            person = new Person();
+            person.set_id(cursor.getInt(0));
+            person.setName(cursor.getString(1));
+            person.setAge(cursor.getString(2));
+            person.setPhone(cursor.getString(3));
+            people.add(person);
+        }
+
+            return people;
 
 
     }

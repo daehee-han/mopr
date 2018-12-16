@@ -33,6 +33,17 @@ public class MainActivity extends AppCompatActivity {
                                  }
                              });
 
+        Button b1 = (Button)findViewById(R.id.btnviewdata);
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(
+                        getApplicationContext(), // 현재 화면의 제어권자
+                        ViewData.class); // 다음 넘어갈 클래스 지정
+                startActivity(intent); // 다음 화면으로 넘어간다
+            }
+        });
+
         btnCreateDatabase = (Button) findViewById(R.id.btnCreateButton);
         btnCreateDatabase.setOnClickListener(new View.OnClickListener(){
             @Override

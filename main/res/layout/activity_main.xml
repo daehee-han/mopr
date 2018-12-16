@@ -7,82 +7,72 @@
     tools:context=".MainActivity"
     tools:layout_editor_absoluteY="25dp">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="51dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginLeft="52dp"
-        android:layout_marginRight="52dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="29dp"
-        android:text="Myter Base"
-        android:textAlignment="center"
-        android:textSize="45dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnCreateButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnviewdata"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
         android:layout_marginEnd="67dp"
         android:layout_marginLeft="67dp"
         android:layout_marginRight="67dp"
         android:layout_marginStart="67dp"
+        android:layout_marginTop="25dp"
         android:text="데이터베이스 열람"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCreateButton" />
+        app:layout_constraintTop_toBottomOf="@+id/btnmanagement" />
 
     <Button
         android:id="@+id/btnmanagement"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="37dp"
         android:layout_marginEnd="67dp"
         android:layout_marginLeft="67dp"
         android:layout_marginRight="67dp"
         android:layout_marginStart="67dp"
+        android:layout_marginTop="24dp"
         android:text="데이터베이스 관리"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/btnCreateButton" />
+
 
     <Button
         android:id="@+id/button3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="148dp"
         android:layout_marginEnd="67dp"
         android:layout_marginLeft="67dp"
         android:layout_marginRight="67dp"
         android:layout_marginStart="67dp"
+        android:layout_marginTop="22dp"
         android:text="데이터 그룹 추가/삭제"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/btnviewdata" />
 
     <Button
         android:id="@+id/btnCreateButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="27dp"
         android:layout_marginEnd="67dp"
         android:layout_marginLeft="67dp"
         android:layout_marginRight="67dp"
         android:layout_marginStart="67dp"
+        android:layout_marginTop="42dp"
         android:text="데이베이스 만들기"
-        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Myter Base"
+        android:textSize="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
