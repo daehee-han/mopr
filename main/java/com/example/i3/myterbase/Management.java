@@ -13,11 +13,72 @@ public class Management extends AppCompatActivity {
 
     private DBHelper dbHelper;
     private Button btnInsertDatabase;
-    protected void onCreate(Bundle savedInstanceState) {
+    private Button btnDeleteDatabase;
+    private Button btnAllDeleteDatabase;
+   protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.database_management);
 
+       btnAllDeleteDatabase = (Button) findViewById(R.id.alldelete);
+       btnAllDeleteDatabase.setOnClickListener(new View.OnClickListener(){
+           @Override
+           public void onClick(View v){
+               AlertDialog.Builder dialog = new AlertDialog.Builder(Management.this);
+               dialog.setTitle("초기화 하시겠습니까?")
+                       .setPositiveButton("예", new DialogInterface.OnClickListener() {
+                           @Override
+                           public void onClick(DialogInterface dialog, int which) {
+                               if (dbHelper == null) {
+                                   dbHelper = new DBHelper(Management.this, "TEST", null, 1);
+                               }
+                               dbHelper.allDelPerson();
+                           }
+                       })
+                       .setNeutralButton("아니요", new DialogInterface.OnClickListener() {
+                           @Override
+                           public void onClick(DialogInterface dialog, int which) {
 
+                           }
+                       })
+                       .create()
+                       .show();
+           }
+       });
+
+        btnDeleteDatabase = (Button) findViewById(R.id.btnDeleteButton);
+       btnDeleteDatabase.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                LinearLayout layout = new LinearLayout(Management.this);
+                layout.setOrientation(LinearLayout.VERTICAL);
+
+                final EditText delName = new EditText(Management.this);
+                delName.setHint("삭제할 이름을 입력하세요.");
+
+                layout.addView(delName);
+                AlertDialog.Builder dialog = new AlertDialog.Builder(Management.this);
+                dialog.setTitle("정보를 입력하세요")
+                        .setView(layout)
+                        .setPositiveButton("등록", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                if (dbHelper == null) {
+                                    dbHelper = new DBHelper(Management.this, "TEST", null, 1);
+                                }
+                                String delkey = delName.getText().toString();
+                                dbHelper.delPerson(delkey);
+            }
+            })
+                        .setNeutralButton("취소", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        })
+                        .create()
+                        .show();
+            }
+       });
         btnInsertDatabase = (Button) findViewById(R.id.btnInsertButton);
         btnInsertDatabase.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -28,7 +28,7 @@ public class DBHelper extends SQLiteOpenHelper {
         sb.append(" _ID INTEGER PRIMARY KEY AUTOINCREMENT, ");
         sb.append(" NAME TEXT, ");
         sb.append(" AGE INTEGER, ");
-        sb.append(" PHONE TEXT ) ");
+        sb.append(" ID TEXT ) ");
 
 
         db.execSQL(sb.toString());
@@ -66,6 +66,14 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
 
+    }
+    public void delPerson(String name){
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("DELETE FROM TEST_TABLE WHERE name='" + name + "';");
+    }
+    public void allDelPerson(){
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("DELETE FROM TEST_TABLE;");
     }
 
     public List getAllPersonData() {
